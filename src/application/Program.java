@@ -14,7 +14,7 @@ public class Program {
 		
 		Scanner inpuData = new Scanner(System.in);
 		
-		try {
+		
 			System.out.println("Enter account data");
 			System.out.print("Number: ");
 			int numberAccount = inpuData.nextInt();
@@ -31,6 +31,8 @@ public class Program {
 			System.out.print("Enter amount for withdraw: ");
 			double amount = inpuData.nextDouble();
 			
+		try {
+			
 			account.withdraw(amount);
 			
 			System.out.println("New balance: " + account.getBalance());
@@ -38,9 +40,6 @@ public class Program {
 		catch (AccountException e) {
 			System.out.println("Withdraw error: " + e.getMessage());
 		}
-		/*catch (RuntimeException e) {
-			System.out.println("Unexpected error");
-		}*/	
 		finally {
 			if(inpuData != null) {
 				inpuData.close();
